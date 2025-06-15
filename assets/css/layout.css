@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f2f2f2;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header .titulo h1 {
+  font-size: 1.8rem;
+}
+
+header .titulo p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+header .acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.sair {
+  background: linear-gradient(90deg, #d32f2f, #b71c1c);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.sair:hover {
+  background: #a31616;
+}
+
+main {
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.botoes-acao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 180px;
+  text-align: center;
+}
+
+.btn.azul {
+  background: #1e88e5;
+  color: white;
+}
+
+.btn.azul:hover {
+  background: #1565c0;
+}
+
+.btn.amarelo {
+  background: #fbc02d;
+  color: #333;
+}
+
+.btn.amarelo:hover {
+  background: #f9a825;
+}
+
+.tabela h2 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.06);
+}
+
+thead {
+  background: #f1f1f1;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.editar {
+  color: #1976d2;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
+.editar:hover {
+  color: #125ea4;
+}
+
+.excluir {
+  color: #e53935;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.excluir:hover {
+  color: #b71c1c;
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  font-size: 1.6rem;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5a;
+}
