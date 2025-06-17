@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['logado'])){
+  header('Location: login.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -18,7 +27,7 @@
     <form method="POST" action="../controllers/CadastrarPedidoController.php">
 
       <label for="nome">Funcionário:</label>
-      <input type="text" id="nome" name="nome" placeholder="Ex: Lucas Gabriel" required />
+      <input type="text" id="nome" name="nome" placeholder="Ex: Lucas" required />
 
       <label for="tamanho">Tamanho do Açaí:</label>
       <select id="tamanho" name="tamanho" required>
