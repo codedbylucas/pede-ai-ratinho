@@ -1,12 +1,12 @@
 <?php
-$host = 'sql111.infinityfree.com';
-$db = 'if0_39234423_acai';  
-$user = 'if0_39234423';
-$pass = 'dravem123';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
-} catch (PDOException $e) {
-    echo 'Erro na conexão: ' . $e->getMessage();
+class Conexao {
+    public static function conectar() {
+        try {
+            $pdo = new PDO("mysql:host=localhost;dbname=pedidos", "root", "");
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $pdo;
+        } catch (PDOException $e) {
+            die("Erro na conexão: " . $e->getMessage());
+        }
+    }
 }
-?>

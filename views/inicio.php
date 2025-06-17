@@ -1,10 +1,13 @@
 <?php
+require_once '../models/Pedido.php';
 session_start();
 
 if (empty($_SESSION['logado'])){
   header('Location: login.php');
   exit;
 }
+
+$pedidos = Pedido::listarPedidos();
 
 ?>
 
@@ -28,7 +31,7 @@ if (empty($_SESSION['logado'])){
     </div>
 
     <section class="tabela">
-      <h2>Pedidos Atuais - <span id="dataHora">14/06/2025 21:21</span></h2>
+      <h2>Pedidos Atuais - <span id="dataHora"><?= $pedidos[1]['data_pedido'] ?></span></h2>
       <table>
         <thead>
           <tr>
@@ -40,16 +43,18 @@ if (empty($_SESSION['logado'])){
           </tr>
         </thead>
         <tbody>
+          <?php foreach($pedidos as $dados):?>
           <tr>
-            <td>Lucas Gabriel</td>
-            <td>1 de 400ML com leite condensado</td>
-            <td>R$ 14,50</td>
-            <td>PIX</td>
+            <td><?= $dados['nome'] ?></td>
+            <td><?='1 de '.$dados['tamanho'].', '.$dados['observacao'].', '. $dados['sabor'] ;?></td>
+            <td><?= 'R$ ' . number_format($dados['valor'], 2, ',', '.') ?></td>
+            <td><?= $dados['pagamento'] ?></td>
             <td>
               <i class="fa-solid fa-pen-to-square editar"></i>
               <i class="fa-solid fa-trash excluir"></i>
             </td>
           </tr>
+          <?php endforeach;?>
         </tbody>
       </table>
     </section>
