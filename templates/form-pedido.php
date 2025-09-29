@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+if(!isset($_SESSION['logado'])){
+    header('Location: ../views/login.php');
+}
+
 $isEdicao = isset($dados['id']);
 $action = $isEdicao ? '../controllers/EditarPedidoController.php' : '../controllers/CadastrarPedidoController.php';
 ?>
